@@ -1,4 +1,5 @@
 # Aplikasi Heroku: KATALOG
+by Emily Rumia Naomi 2106652700
 Click [here](https://tugas2katalog.herokuapp.com/katalog/) to visit the app!
 
 ## 💡Bagan Request Client
