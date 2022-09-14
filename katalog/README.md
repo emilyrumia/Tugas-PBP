@@ -1,8 +1,6 @@
 # 💻Aplikasi Heroku: KATALOG
 Click [here](https://tugas2katalog.herokuapp.com/katalog/) to visit the app!
 
-<br><br>
-
 ## 💡Bagan Request Client
 
 <span style="color:red; font-weight:bold; font-size:larger;">This is the WAY!</span>
