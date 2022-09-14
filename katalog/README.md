@@ -1,4 +1,4 @@
-Aplikasi Heroku: KATALOG
+💻Aplikasi Heroku: KATALOG
 ---
 Click [here](https://tugas2katalog.herokuapp.com/katalog/) to visit the app!
 
