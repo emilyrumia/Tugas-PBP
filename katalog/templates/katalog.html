@@ -2,15 +2,31 @@
 
  {% block content %}
 
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:first-child {
+    background-color: #dddddd;
+  }
+  </style>
+
   <h1>Lab 1 Assignment PBP/PBD</h1>
 
-  <h5>Name: </h5>
-  <p>{{nama}}</p>
+  <h3>Name: {{nama}}</h3>
 
-  <h5>Student ID: </h5>
-  <p>{{npm}}</p>
+  <h3>Student ID: {{npm}}</h3>
 
-  <table>
+  <table style="width:100%">
     <tr>
       <th>Item Name</th>
       <th>Item Price</th>
@@ -26,8 +42,8 @@
         <th>{{barang.item_price}}</th>
         <th>{{barang.item_stock}}</th>
         <th>{{barang.rating}}</th>
-        <th>{{barang.descripstion}}</th>
-        <th>{{barang.item_url}}</th>
+        <th>{{barang.description}}</th>
+        <th><a href = " {{barang.item_url}} ">Click untuk melihat barang!</a></th>
     </tr>
     {% endfor %}
   </table>
