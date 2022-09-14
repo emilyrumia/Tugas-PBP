@@ -5,8 +5,8 @@
 Click [here](https://tugas2katalog.herokuapp.com/katalog/) to visit the app!
 
 
-## 💡Bagan Request Client
-
+## 💡Buatlah dan Jelaskan bagan yang berisi request client ke web aplikasi berbasis Django
+![Bagan Request Client](https://user-images.githubusercontent.com/112367959/190240296-0ed97f21-bf82-4d43-87d9-b7c0ffe926a3.png)
 
 
 ## 💡Jelaskan kenapa menggunakan virtual environment?
