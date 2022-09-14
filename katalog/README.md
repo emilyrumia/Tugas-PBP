@@ -23,4 +23,4 @@ Virtual Environment biasa digunakan untuk project berbasis Python. Karena Prject
 
 
 <hr>
-<span style="color:red; font-weight:bold; font-size:larger;">This is the WAY!</span>
+<span style="color:red; font-weight:bold; font-size:larger;">Thank You!</span>
