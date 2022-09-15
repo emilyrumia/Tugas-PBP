@@ -17,7 +17,7 @@ Virtual Environment sangat berguna ketika kita membutuhkan dependencies yang ber
 Virtual Environment biasa digunakan dalam Project menggunakan python. Dikarenakan, perbedaan versi python pada setiap perangkat sering berbeda-beda. Sehingga akan mengakibatkan masalah jika suatu project bergantung pada versi tertentu. Untuk mengatasi masalah tersebut, butuh sebuah wadah khusus, yaitu Virtual Enviroment yang akan menampung teknologi-teknologi yang digunakan untuk membuat suatu proyek. Gambarannya adalah jika kita membuat sebuah proyek 1 dan kita buat sebuah virtual environment 1 dan setelah itu ada juga proyek 2 dengan virtual environment 2. Maka semua kebutuhan proyek 1 bisa kita install pada virtual enviroment 2 dan dengan kebutuhuan proyek 2 kita dapat menginstall pada virtual enviroment 2. Contoh virtual enviroment pada python adalah venv.
 
 ## 💡Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
-Kita bisa tetap membuat aplikasi web berbasis Django tanpa menggunakan virtual enviroment. Kita bisa menggunakan Development Environment (env) dari framework Django. Development Enviroment ini memuat semua kebutuhan yang dibutuhkan Django pada komputer lokal kita. Jadi, sudah sangat lengkap dalam proses pengembangan dan pengujian aplikasi meggunakan Django sebelum proses publikasi di server utama (production environment).
+Kita membuat aplikasi web berbasis Django menggunakan Development Environment dari framework Django. Development Enviroment ini memuat semua kebutuhan yang dibutuhkan Django pada komputer lokal kita. Jadi, sudah sangat lengkap dalam proses pengembangan dan pengujian aplikasi meggunakan Django sebelum proses publikasi di server utama (production environment).
 
 Tools utama yang disediakan Django terdiri dari:
 1. Seperangkat skrip python untuk memanage projek Django
@@ -27,9 +27,7 @@ Tools yang juga disediakan development environtment terdiri dari:
 1. Text editor/ IDE 
 2. Source control management, contohnya Git
 
-Development Enviroment Django ini memiliki beberapa kelebihan, yaitu dapat dijalankan di sistem operasi yang berbeda – beda, seperti Windows, Mac OS, Linux/Unix, dan lain-lain, dikonfigurasi untuk menggunakan salah satu dari beberapa database.
-
-Walau bisa tanpa virtual enviroment, tapi lebih baik menggunakan virtual enviroment, seperti venv.
+Namun, untuk menjalankan proyek yang dibuat tanpa virtual enviroment kita harus menyiapkan file requirements.txt agar Heroku dapat mengenali semua kebutuhan yang harus di install dan dependensi Python. Dengan virtual enviroment, requirements.txt lebih mudah untuk dibuat sehingga  walau bisa tanpa virtual enviroment, tapi lebih baik menggunakan virtual enviroment, seperti venv.
 
 ## 💡Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 Hasil pengimplementasian poin 1 dan 4 merupakan applikasi heroku [katalog](https://appkatalog.herokuapp.com/katalog/) yang sudah dicantumkan diatas. Cara-cara pengimplementasikan app tersebut, sebagai berikut:
