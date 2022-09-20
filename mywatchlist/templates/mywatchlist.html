@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <style>
+  table {
+    font-family: Helvetica;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+
+  tr:first-child {
+    background-color:  MediumSeaGreen;
+  }
+
+  .review {
+    text-align: left;
+  }
+
+  /* th:last-child {
+    background-color: #00ff00;
+  } */
+
+  </style>
+
+  <h1>Tugas 3 Assignment PBP/PBD</h1>
+
+  <h3>Name: {{nama}}</h3>
+
+  <h3>Student ID: {{npm}}</h3>
+
+  <table style="width:100%">
+    <tr>
+      <th style="width:15%">Title</th>
+      <th style="width:11%">Release Date</th>
+      <th style="width:5%">Rating (IMDb)</th>
+      <th style="width:50%">Review</th>
+      <th style="width:9%">Watched Status</th>
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for movie in data_movies %}
+    <tr>
+        <th>{{movie.title_movie}}</th>
+        <th>{{movie.release_date}}</th>
+        <th>{{movie.rating_movie}}</th>
+        <th class="review">{{movie.review_movie}}</th>
+        <th>{{movie.watched_status}}</th>
+    </tr>
+    {% endfor %}
+  </table>
+
+  {% endblock content%}
