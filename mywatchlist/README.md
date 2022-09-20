@@ -14,6 +14,9 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
 1. Membuat aplikasi `django-app` bernama `mywatchlist` pada repositori tugas 2 dengan perintah 
    > poin 1
    ```shell
+   python -m venv env
+   source env/bin/activate
+   pip install -r requirements.txt
    python manage.py startapp mywatchlist
    ```
 2. Menambahkan aplikasi `mywatchlist` ke dalam variabel `INSTALLED_APPS` pada `settings.py` di folder `project_django`
@@ -42,7 +45,7 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
    python manage.py migrate
    ```
 6. Membuat sebuah folder `fixture` di dalam aplikasi `mywatchlist` dan membuat file `initial_mywatchlist_data.json` untuk memberikan data kepada atribut      pada `models.py` yang berisi 10 data
-  > poin 4
+   > poin 4
    ```shell
    [
     {
@@ -156,7 +159,7 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
         }
     }
    ]
-```
+   ```
 7. Menjalankan perintah tersebut untuk memasukkan data ke dalam database Django lokal
    ``` shell
    python manage.py loaddata initial_wishlist_data.json
@@ -175,69 +178,58 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
     'npm' : '2106652700',
    }
    ```
-10. Membuat sebuah berkas di dalam folder aplikasi `mywatchlist` bernama `urls.py` untuk melakukan routing terhadap fungsi views yang dibuat buat sehingga nantinya halaman HTML dapat ditampilkan lewat browser-mu. Isi dari `urls.py` tersebut adalah sebagai berikut
-   ``` shell
-   from django.urls import path
-   from mywatchlist.views import show_mywatchlist
+10. Membuat sebuah berkas di dalam folder aplikasi `mywatchlist` bernama `urls.py` untuk melakukan routing terhadap fungsi views yang dibuat buat sehingga  nantinya halaman HTML dapat ditampilkan lewat browser-mu. Isi dari `urls.py` tersebut adalah sebagai berikut
+    ``` shell
+    from django.urls import path
+    from mywatchlist.views import show_mywatchlist
    
-   app_name = 'mywatchlist'
+    app_name = 'mywatchlist'
    
-   urlpatterns = [
-    path('', show_mywatchlist, name='show_mywatchlist'),
-   ]
-   ```
+    urlpatterns = [
+     path('', show_mywatchlist, name='show_mywatchlist'),
+    ]
+    ```
 11. Menambahkan aplikasi `mywatchlist` ke dalam `urls.py` yang ada pada folder `project_django` dengan menambahkan potongan kode berikut pada variabel `urlpatterns`
-``` shell
-   ...
-   path('mywatchlist/', include('mywatchlist.urls')),
-   ...
-   ```
+    > poin 2
+    ``` shell
+    ...
+    path('mywatchlist/', include('mywatchlist.urls')),
+    ...
+    ```
 12. Pada file `views.py` yang ada pada folder `mywatchlist`, import `HttpResponse` dan `Serializer` pada bagian paling atas
     ``` shell
     from django.http import HttpResponse
     from django.core import serializers
     ```
-13. Untuk mengembalikan data pada format XML, tambahkan sebuah fungsi `show_xml` pada `views.py` yang berisi
-    > poin 5.2
-    ``` shell
-    def show_xml(request):
-    data = WatchList.objects.all()
-    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
-    ```
-14. Untuk menembalikan data pada format HTML, tambahkan sebuah fungsi `show_html` pada `views.py` yang berisi
+13. Untuk menembalikan data pada format `HTML`, tambahkan sebuah fungsi `show_html` pada `views.py` yang berisi
     > poin 5.1
     ``` shell
     insert!!!
     ```
-15. Untuk mengembalikan data pada format XML, tambahkan sebuah fungsi `show_xml` pada `views.py` yang berisi
+14. Untuk mengembalikan data pada format `XML`, tambahkan sebuah fungsi `show_xml` pada `views.py` yang berisi
     > poin 5.2
     ``` shell
     def show_xml(request):
     data = WatchList.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
     ```
-16. Untuk menembalikan data pada format JSON, tambahkan sebuah fungsi `show_json` pada `views.py` yang berisi
+15. Untuk menembalikan data pada format `JSON`, tambahkan sebuah fungsi `show_json` pada `views.py` yang berisi
     > poin 5.3
     ``` shell
     def show_json(request):
     data = WatchList.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
     ```
-17. Menambahkan path `'html/'`, `'xml/'`, dan `'json/'` ke dalam `urls.py` yang ada pada folder `mywatchlist` dengan menambahkan potongan kode berikut pada variabel `urlpatterns`
+16. Menambahkan path `'html/'`, `'xml/'`, dan `'json/'` ke dalam `urls.py` yang ada pada folder `mywatchlist` dengan menambahkan potongan kode berikut pada variabel `urlpatterns`
     > poin 6
-   ``` shell
-   ...
-   path(...),
-   path('xml/', show_xml, name='show_xml'),
-   path('json/', show_json, name='show_json'),
-   ...
-   ```
-
-
-
-
+    ``` shell
+    ...
+    path(...),
+    path('xml/', show_xml, name='show_xml'),
+    path('json/', show_json, name='show_json'),
+    ...
+    ```
  
-  
 ## 💡Mengakses tiga URL menggunakan Postman
 
 <hr>
