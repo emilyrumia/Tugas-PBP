@@ -14,6 +14,7 @@ context = {
     'data_movies': data_movie_mywatchlist,
     'nama': 'Emily Rumia Naomi',
     'npm' : '2106652700',
+    'watched_boolean': len(data_movie_mywatchlist.filter(watched_status="Watched")) > len(data_movie_mywatchlist.filter(watched_status="Haven't watch"))
 }
 
 def show_html(request):

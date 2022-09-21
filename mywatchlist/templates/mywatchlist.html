@@ -37,15 +37,25 @@
     margin-left: 5px;
   }
 
+  .pesan{
+    color: red;
+  }
+
   </style>
 
   <h1>em's watchlist</h1>
 
   <h2>Tugas 3 Assignment PBP/PBD</h2>
 
-  <h3>Name: {{nama}}</h4>
+  <h3>Name: {{nama}}</h3>
 
-  <h3>Student ID: {{npm}}</h4>
+  <h3>Student ID: {{npm}}</h3>
+
+  {% if watched_boolean %}
+    <h3 class="pesan">Selamat, kamu sudah banyak menonton!</h3>
+  {% else %}
+    <h3 class="pesan">Wah, kamu masih sedikit menonton!</h3>
+  {% endif %}
 
   <table style="width:100%">
     <tr>
