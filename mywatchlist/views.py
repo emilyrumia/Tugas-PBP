@@ -2,8 +2,6 @@ from django.shortcuts import render
 from mywatchlist.models import WatchList
 from django.http import HttpResponse
 from django.core import serializers
-# from django.core import TemplateHTMLRenderer
-# from django.core import Response
 
 # Create your views here.
 def show_mywatchlist(request):
