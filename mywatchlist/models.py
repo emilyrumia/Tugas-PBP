@@ -4,7 +4,7 @@ from django.db import models
 class WatchList(models.Model):
     title_movie = models.CharField(max_length=300)
     release_date = models.CharField(max_length=300)
-    rating_movie = models.CharField(max_length=300)
+    rating_movie = models.IntegerField()
     review_movie = models.TextField()
-    watched_status = models.CharField(max_length=300)
+    watched_status = models.CharField(max_length=255)
 
