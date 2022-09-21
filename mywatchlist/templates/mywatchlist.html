@@ -24,17 +24,28 @@
     text-align: left;
   }
 
-  /* th:last-child {
-    background-color: #00ff00;
-  } */
+  h1 {
+    text-align: center;
+    font: bold
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    margin-left: 5px;
+  }
 
   </style>
 
-  <h1>Tugas 3 Assignment PBP/PBD</h1>
+  <h1>em's watchlist</h1>
 
-  <h3>Name: {{nama}}</h3>
+  <h2>Tugas 3 Assignment PBP/PBD</h2>
 
-  <h3>Student ID: {{npm}}</h3>
+  <h3>Name: {{nama}}</h4>
+
+  <h3>Student ID: {{npm}}</h4>
 
   <table style="width:100%">
     <tr>
@@ -50,7 +61,7 @@
         <th>{{movie.title_movie}}</th>
         <th>{{movie.release_date}}</th>
         <th>{{movie.rating_movie}}</th>
-        <th class="review">{{movie.review_movie}}</th>
+        <th>{{movie.review_movie}}</th>
         <th>{{movie.watched_status}}</th>
     </tr>
     {% endfor %}
