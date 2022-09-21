@@ -3,9 +3,9 @@
 > by Emily Rumia Naomi - 2106652700
 
 Click [here](https://appkatalog.herokuapp.com/mywatchlist/) to visit the app!
-- [html](https://appkatalog.herokuapp.com/mywatchlist/html/)
-- [xml](https://appkatalog.herokuapp.com/mywatchlist/xml/)
-- [json](https://appkatalog.herokuapp.com/mywatchlist/json/)
+- [HTML](https://appkatalog.herokuapp.com/mywatchlist/html/)
+- [XML](https://appkatalog.herokuapp.com/mywatchlist/xml/)
+- [JSON](https://appkatalog.herokuapp.com/mywatchlist/json/)
 
 ## 💡Jelaskan perbedaan antara JSON, XML, dan HTML!
 
@@ -51,116 +51,19 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
    > poin 4
    ```shell
    [
+   ...
     {
         "model":"mywatchlist.watchlist",
         "pk":1,
         "fields":{
-            "title_movie":"The Invisible Guest",
-            "release_date":"January 6, 2017",
-            "rating_movie": "8/10",
-            "review_movie" :"The first half of the movie is flawless, the characters seem interesting enough, and the plot is enthralling. You know you're  in for some really good movie time. As the movie progresses, the mystery starts to unravel, but then there are sudden plot twists that you probably didn't see coming.",
-            "watched_status" :"Watched"
+            "title_movie":"...",
+            "release_date":"...",
+            "rating_movie": ".../10",
+            "review_movie" :"...",
+            "watched_status" :"Watched/Haven't watch"
         }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":2,
-        "fields":{
-            "title_movie":"Orphan: First Kill",
-            "release_date":"August 31, 2022",
-            "rating_movie":"6/10",
-            "review_movie" :"Absolutely brilliant. This is exactly how psychological horrors should be produced. This felt just as suspenseful and impactful as the original 2009 movie. Smart, witty script followed by brilliant acting from the cast and the main protagonist who slipped back into her role without any noticeable difference.",
-            "watched_status" :"Haven't watch"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":3,
-        "fields":{
-            "title_movie":"The Dark Knight Rises",
-            "release_date":"July 20, 2012",
-            "rating_movie": "8.4/10",
-            "review_movie" :"'Dark Knight' was a whole new beast altogether be it storyline, plot, visuals, character development everything was etched to  perfection there was not a single thing that I disliked about the movie. It is when superheros are made more human more susceptible to damage mentally or physically who have relationship, fellings, shortcomings, fear, despair is when you as audience connect with them you find a part of yourself within them as if they are real people",
-            "watched_status":"Watched"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":4,
-        "fields":{
-            "title_movie":"Collateral",
-            "release_date":"August 6, 2004",
-            "rating_movie":"7.5/10", 
-            "review_movie" :"The screenplay is brilliant and has all the makings of a perfect action thriller. While there is some compelling character drama, there are also a few twists which are thrown in very well. Cinematography is excellent, especially during the action sequences.",
-            "watched_status":"Haven't watch"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":5,
-        "fields":{
-            "title_movie":"May the Devil Take You Too",
-            "release_date":"February 27, 2020 ",
-            "rating_movie":"6/10",
-            "review_movie" :"There are some creepy moments, but ultimately ruined by nonsensical character behaviour, mostly not running whenever they get the chance, falling and dragging across the floor for no reason and screaming in anger followed by being passive.",
-            "watched_status" :"Watched"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":6,
-        "fields":{
-            "title_movie":"why did you kill me?",
-            "release_date":"April 14, 2021",
-            "rating_movie":"5.6/10",
-            "review_movie":"A good mockumentary, but the irritating thing about it is the fact that it highlights how disgusting society has become & the absolute lack of discipline; it's like stating the absolute obvious",
-            "watched_status":"Haven't watch"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":7,
-        "fields":{
-            "title_movie":"Do Revenge",
-            "release_date":"September 16, 2022",
-            "rating_movie":"6.5/10", 
-            "review_movie":"It's funny, a little hint of sadness, and whole lot of REVENGE! It's definitely a must watch",
-            "watched_status":"Haven't watch"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":8,
-        "fields":{
-            "title_movie":"Friendzone",
-            "release_date":"March 20, 2019",
-            "rating_movie":"7.2/10",
-            "review_movie":"One of the most well done Thai romcoms! All encapsulating the well-written script, a heartwarming yet emotional story of Gink and Palm navigating the ups and downs of friendship and romance.",
-            "watched_status":"Watched"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":9,
-        "fields":{
-            "title_movie":"Impetigore",
-            "release_date":"October 17, 2019",
-            "rating_movie":"6.6/10",
-            "review_movie":"The storyline makes the viewer anticipating and wondering, also it has a fast pace of storyline where you don't have to wait for a 'horror silent moment' to past throught to go to the next scene. The cinematography is terrifyingly great!",
-            "watched_status":"Haven't watch"
-        }
-    },
-    {
-        "model":"mywatchlist.watchlist",
-        "pk":10,
-        "fields":{
-            "title_movie":"White Chicks",
-            "release_date":"June 23, 2004",
-            "rating_movie":"5.7/10",
-            "review_movie":"White chicks is one of those daft 'put your brain on hold' films that makes you laugh because it's genuinely silly, and great fun. Doesn’t matter how many times I watch this movie, it always puts a smile on my face.",
-            "watched_status": "Watched"
-        }
-    }
+    }, 
+    ...
    ]
    ```
 7. Menjalankan perintah tersebut untuk memasukkan data ke dalam database Django lokal
@@ -207,7 +110,8 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
 13. Untuk menembalikan data pada format `HTML`, tambahkan sebuah fungsi `show_html` pada `views.py` yang berisi
     > poin 5.1
     ``` shell
-    insert!!!
+    def show_html(request):
+    return render(request, "mywatchlist.html", context)
     ```
 14. Untuk mengembalikan data pada format `XML`, tambahkan sebuah fungsi `show_xml` pada `views.py` yang berisi
     > poin 5.2
@@ -227,13 +131,25 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
     > poin 6
     ``` shell
     ...
-    path(...),
+    path('html/', show_html, name='show_html'),
     path('xml/', show_xml, name='show_xml'),
     path('json/', show_json, name='show_json'),
     ...
     ```
- 
+ 17. Setelah itu melakukan `git add`, `git commit`, dan `git push` ke dalam repository yang ada di github
+ 18. Dikarenakan repository pada tugas 2, sudah ada file `dpl.yml`, membuat aplikasi `heroku` dan sudah mengisi Secrets untuk GitHub Actions `(Settings -> Secrets -> Actions)` pada variabel repository secret untuk melakukan deployment. Maka deployment akan otomatis terjadi.
+    > poin 7
+    ``` shell
+    HEROKU_API_KEY: <VALUE_API_KEY_ANDA>
+    HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU_ANDA>
+    ```
+(NAME)HEROKU_APP_NAME
+(VALUE)APLIKASI-SAYA
 ## 💡Mengakses tiga URL menggunakan Postman
+- [HTML](https://appkatalog.herokuapp.com/mywatchlist/html/)
+
+- [XML](https://appkatalog.herokuapp.com/mywatchlist/xml/)
+- [JSON](https://appkatalog.herokuapp.com/mywatchlist/json/)
 
 <hr>
 Sekian, Terima Kasih!
