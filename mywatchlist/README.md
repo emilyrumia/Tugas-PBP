@@ -8,9 +8,23 @@ Click [here](https://appkatalog.herokuapp.com/mywatchlist/) to visit the app!
 - [JSON](https://appkatalog.herokuapp.com/mywatchlist/json/)
 
 ## 💡Jelaskan perbedaan antara JSON, XML, dan HTML!
-
+- JSON (JavaScript Object Notation)
+  - JSON menyimpan semua datanya dalam format map (key / value) yang rapi dan lebih mudah untuk dipahami
+  - JSON adalah format pertukaran data ringan yang jauh lebih mudah bagi komputer untuk mengurai data yang sedang dikirim
+  - Lebih sulit dibaca dari XML
+  - Ekstensi file XML adalah .json
+- XML (Extensible Markup Language)
+  - XML menawarkan kalian untuk menentukan elemen markup dan menghasilkan bahasa markup yang disesuaikan
+  - XML digunakan untuk menyimpan dan mengangkut data dari satu aplikasi ke aplikasi lain melalui Internet, namun lebih lama dari JSON
+  - XML menyimpan data dalam format teks mirip dengan HTML sehingga mudah dibaca manusia
+  - Ekstensi file XML adalah .xml
+- HTML (HyperText Markup Language)
+  - HTML menyajikan data dengan format teks dilengkapi dengan tag
+  - Format penampilan data HTML ditujukan dalam pembuatan sebuah aplikasi web browser.
+  - Ekstensi file XML adalah .html
 
 ## 💡Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+   Dalam penggunaan sebuah platform, sering terjadi pertukaran data. Data delivery ini dibutuhkan untuk memudahkan proses pertukaran data tersebut. Data yang dikirimkan mempunyai beberapa format, seperti HTML, XML, dan JSON. Format-format ini membantu agar data mudah dibaca oleh manusia, bahasa pemrograman, dan juga API. 
 
 ## 💡Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist diatas dan menghasilkan aplikasi mywatchlist
@@ -143,13 +157,38 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
     HEROKU_API_KEY: <VALUE_API_KEY_ANDA>
     HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU_ANDA>
     ```
-(NAME)HEROKU_APP_NAME
-(VALUE)APLIKASI-SAYA
+
 ## 💡Mengakses tiga URL menggunakan Postman
 - [HTML](https://appkatalog.herokuapp.com/mywatchlist/html/)
-
+  ![Postman HTML](https://user-images.githubusercontent.com/112367959/191556649-5d26cba4-6a47-4317-8b5a-a11330768705.png)
 - [XML](https://appkatalog.herokuapp.com/mywatchlist/xml/)
+  ![Postman XML](https://user-images.githubusercontent.com/112367959/191557825-254eb404-f884-4783-adc7-51a4fd7dd65c.png)
 - [JSON](https://appkatalog.herokuapp.com/mywatchlist/json/)
+  ![Postman JSON](https://user-images.githubusercontent.com/112367959/191557417-32a8543c-e01d-4362-a527-3e718f818ba6.png)
+  
+## 💡Menambahkan unit test pada tests.py untuk menguji bahwa tiga URL di poin 6 dapat mengembalikan respon HTTP 200 OK
+   1. Menambahkan kode berikut pada `tests.py` dalam folder `mywatchlist`
+      ``` shell
+      from django.test import TestCase, Client
+      from django.urls import resolve
+       class test_watchlist(TestCase):
+        def test_html_url(self):
+           client = Client()
+           response = client.get('/mywatchlist/html/')
+           self.assertEqual(response.status_code, 200)
 
+        def test_xml_url(self):
+           client = Client()
+           response = client.get('/mywatchlist/xml/')
+           self.assertEqual(response.status_code, 200)
+
+        def test_json_url(self):
+           client = Client()
+           response = client.get('/mywatchlist/json/')
+           self.assertEqual(response.status_code, 200)
+      ``` 
+   2. Setelah itu menjalan `python manage.py tests` dan menghasilkan seperti screenshoot dibawah ini
+      ![Test](https://user-images.githubusercontent.com/112367959/191558762-1d504d56-af7b-4e97-876a-952f30859d09.png)
+    
 <hr>
 Sekian, Terima Kasih!
