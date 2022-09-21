@@ -1,7 +1,4 @@
-from unittest.mock import DEFAULT
 from django.db import models
-
-DEFAULT = 0
 
 # Create your models here.
 class WatchList(models.Model):
