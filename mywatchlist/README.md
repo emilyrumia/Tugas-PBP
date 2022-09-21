@@ -2,7 +2,10 @@
 
 > by Emily Rumia Naomi - 2106652700
 
-Click [here]() to visit the app!
+Click [here](https://appkatalog.herokuapp.com/mywatchlist/) to visit the app!
+- [html](https://appkatalog.herokuapp.com/mywatchlist/html/)
+- [xml](https://appkatalog.herokuapp.com/mywatchlist/xml/)
+- [json](https://appkatalog.herokuapp.com/mywatchlist/json/)
 
 ## 💡Jelaskan perbedaan antara JSON, XML, dan HTML!
 
