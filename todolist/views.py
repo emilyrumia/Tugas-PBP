@@ -5,14 +5,14 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from todolist.models import Task
+from todolist.models import TaskList
 from todolist.forms import TaskForm
 import datetime
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.filter(user=request.user)
+    data_todolist = TaskList.objects.filter(user=request.user)
     context = {
     'data_todolist': data_todolist,
     'username': request.user.get_username(),
