@@ -247,6 +247,26 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
     HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU_ANDA>
     ```
 9. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
-
+   > Membuat dua akun
+   - Registrasi Akun 1: `cleoasenna`
+     ![Registrasi Akun 1](https://user-images.githubusercontent.com/112367959/192631439-e7639bf8-74d8-41be-a940-39b0cf7e5776.png)
+   - Akun 1: `cleoasenna` berhasil ditambahkan
+     ![Akun 1 berhasil](https://user-images.githubusercontent.com/112367959/192631476-4acab5be-bc19-4f08-a800-30a0c6bd49b2.png)
+   - Registrasi Akun 1: `kesyenna`
+     ![Registrasi Akun 2](https://user-images.githubusercontent.com/112367959/192631498-ed62349f-6276-4035-afda-02e05c60ac5d.png)
+   - Akun 2: `kesyenna` berhasil ditambahkan
+     ![Akun 2 berhasil](https://user-images.githubusercontent.com/112367959/192631505-42d8debc-3766-45ec-93ab-3b3c55641a60.png)
+   > Tiga dummy data
+   - Login Akun 1 : `cleoasenna`
+     ![Login Akun 1](https://user-images.githubusercontent.com/112367959/192633436-57d416df-73e3-411d-826f-4bb21e1fa516.png)
+   - Halaman awal (masih kosong) Akun 1 : `cleoasenna`
+     ![Awal Akun 1](https://user-images.githubusercontent.com/112367959/192633205-876949f8-218f-431f-ab45-d39a72c03a83.png)
+   - Create Task
+     ![Task Akun 1](https://user-images.githubusercontent.com/112367959/192633217-e8a78027-430c-41bc-83d5-7c8965bb3482.png)
+   - Halaman `todolist` Akun 1 setelah membuat 3 Tasks
+     ![Akun 1](https://user-images.githubusercontent.com/112367959/192633514-41aea447-dd01-4db2-b2db-0d4033ea953b.png)
+   - Login, Halaman Awal, Create Task Akun 2 sama prosesnya
+   - Halaman `todolist` Akun 2 setelah membuat 3 Tasks
+     ![Akun 2](https://user-images.githubusercontent.com/112367959/192633523-a160cd16-580e-448e-b16b-2265939a690a.png)
 <hr>
 Sekian, Terima Kasih!
