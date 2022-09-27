@@ -1,5 +1,5 @@
 from django.urls import path
-from todolist.views import delete, register
+from todolist.views import register
 from todolist.views import login_user
 from todolist.views import logout_user
 from todolist.views import show_create_task
