@@ -59,12 +59,12 @@ Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist d
      path('todolist/', include('todolist.urls')),
      ...
      ```
-3. Membuat sebuah model `Task` yang memiliki atribut user, date, title, dan description:
+3. Membuat sebuah model yang memiliki atribut user, date, title, dan description:
    - Menambahkan kode pada `models.py` di folder `todolist` dengan atribut-atribut sebagai berikut:
      ```shell
      from django.contrib.auth.models import User
 
-     class Task(models.Model):
+     class TaskList(models.Model):
       user = models.ForeignKey(User, on_delete=models.CASCADE)
       date = models.DateField()
       title = models.CharField(max_length=255)
