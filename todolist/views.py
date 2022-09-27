@@ -5,14 +5,14 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from todolist.models import TaskList
+from todolist.models import Task
 from todolist.forms import TaskForm
 import datetime
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = TaskList.objects.filter(user=request.user)
+    data_todolist = Task.objects.filter(user=request.user)
     context = {
     'data_todolist': data_todolist,
     'username': request.user.get_username(),
@@ -60,7 +60,7 @@ def show_create_task(request):
             title = form.cleaned_data["title"]
             description = form.cleaned_data["description"]
             is_finished = False
-            TaskList.objects.create(date=date, user=user, title=title, description=description, is_finished=is_finished)
+            Task.objects.create(date=date, user=user, title=title, description=description, is_finished=is_finished)
             messages.success(request, 'Your new task has been added!')
             return redirect('todolist:todolist')
     else:
@@ -69,14 +69,14 @@ def show_create_task(request):
 
 @login_required(login_url='/todolist/login/')
 def update_status(request, id):
-    data = TaskList.objects.get(user = request.user, pk = id)
+    data = Task.objects.get(user = request.user, pk = id)
     data.is_finished = not data.is_finished
     data.save()
     return redirect('todolist:todolist')
 
 @login_required(login_url='/todolist/login/')
 def delete(request, id):
-    data = TaskList.objects.get(user = request.user, pk = id)
+    data = Task.objects.get(user = request.user, pk = id)
     data.delete()
     messages.success(request, 'Your task has been successfully deleted!')
     return redirect('todolist:todolist')
