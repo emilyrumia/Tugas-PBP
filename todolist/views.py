@@ -56,7 +56,7 @@ def show_create_task(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             user = request.user
-            date = datetime.datetime.now()
+            date = datetime.date.today()
             title = form.cleaned_data["title"]
             description = form.cleaned_data["description"]
             is_finished = False
