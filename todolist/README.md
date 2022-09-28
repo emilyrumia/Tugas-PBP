@@ -10,9 +10,15 @@ Click [here](https://appkatalog.herokuapp.com/todolist/) to visit the app!
 
 ## 💡Apa kegunaan `{% csrf_token %}` pada elemen `<form>`? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?
 
+`{% csrf_token %}` adalah token yang digunakan untuk menjaga keamanan, khusunya melindungi dari CSRF (Cross Site Request Forgery) Attack. Tanpa adanya token ini, form akan tetap berjalan dengan baik, namun akan memudahkan pihak eksternal website tersebut mengakses data karena request akan diterima tanpa adanya verifikasi atau validasi. 
+
 ## 💡Apakah kita dapat membuat elemen `<form>` secara manual (tanpa menggunakan generator seperti `{{ form.as_table }}`)? Jelaskan secara gambaran besar bagaimana cara membuat `<form>` secara manual.
 
+Kita tetap dapat membuat elemen `<form>` secara manual tanpa menggunakan generator seperti `{{ form.as_table }}`. Kita hanya perlu menambahkan manual elemen `<form>` disertai dengan `{% csrf_token %}` untuk keamanan. Setelah itu memasukan field dengan elemen `<input>` type nya disesuaikan dengan jenis data yang ingin diterima dan juga elemen `<input type="submit">` untuk mengirim data dari POST request kepada django database. 
+
 ## 💡Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+
+User akan mengisi data pada HTML form dan melakukan penyimpanan data pada database dengan mengklik input bertipe submit yang sebelumnya akan diperiksa. Jika data valid, form akan menjalankan request POST tersebut. Data tersebut setelah itu akan disimpan pada database sesuai dengan atribut-atribut `models.py` yang sudah ada. Dari penyimpanan data berdasarkan atribut-atribut tersebut kita bisa mengakses dan mengatur untuk menampilkan pada template HTML kita dengan menghubungkan atau memproses data tersebut pada `views.py`.
 
 ## 💡Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 Berikut merupakan tahapan-tahapan yang saya lakukan untuk melengkapi checklist diatas:
