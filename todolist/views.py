@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from todolist.models import TaskList
 from todolist.forms import TaskForm
-from datetime import date
+import datetime
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -56,7 +56,7 @@ def show_create_task(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             user = request.user
-            date = date.today()
+            date = datetime.datetime.now()
             title = form.cleaned_data["title"]
             description = form.cleaned_data["description"]
             is_finished = False
