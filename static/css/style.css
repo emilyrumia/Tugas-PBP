@@ -1,0 +1,252 @@
+
+h1, h2, h4 {
+    text-align: center;
+    font: bold
+  }
+
+h3 {
+    margin-left: 5px;
+}
+
+.p {
+    text-align: center;
+    font-size: 15px;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/*  Login.html  */
+
+#login {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+
+.formL {
+    position: relative;
+    background-color: #f4c86a;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.containerL {
+    width: 370px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.login {
+    margin-top: 70px;
+}
+
+.login_btn {
+    width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;        
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#eba9a1;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: white;
+    font: bold;
+    font-size: 15px;
+}
+
+.inputL {
+    font-size: 18px;
+    color: black;
+    font: bold;
+} 
+
+.messageL {
+    font: bold;
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+ 
+/*  Register.html  */
+
+.formR {
+    position: relative;
+    background-color: #f4c86a;
+    max-width: 700px;
+    padding: 5px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.containerR {
+    width: 500px;
+    padding: 6% 0 0;
+    margin: auto;
+}
+
+.daftar_btn {
+    width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;        
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#eba9a1;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: white;
+    font: bold;
+    font-size: 15px;
+}
+
+.daftar_btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.inputR {
+    font-size: 18px;
+    color: black;
+    font: bold;
+}
+
+
+#help {
+    font-size: 12px;
+    color:#433e38;
+}
+
+.messageR {
+    font: bold;
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}
+
+/*  todolist.html  */
+
+.tableTodo {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+
+.todo {
+    color:#433e38;
+    border:  solid ;
+    padding: 8px;
+}
+
+#todolist:first-child  {
+    background-color:  #e6bb38;
+}
+
+.button{
+    text-align: center;
+}
+
+.btn-create {
+    width: 30%;
+    margin-top: auto;
+    margin-bottom: auto;        
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eba9a1;
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+    font: bold;
+    font-size: 15px;
+}
+
+button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.ans {
+    color: black;
+    padding: 1%;
+}
+
+#btn-ans {
+    width: 100%;
+    font-size: 15px;
+    background-color: #5bb1ab;
+    border-radius: 5px;
+}
+
+.messageT {
+    font: bold;
+    color: red;
+}
+
+.navbar{
+    background-color: #e6bb38 ;
+}
+
+.mouse:hover {
+    transform: scale(1.05);
+}
+
+.card-footer {
+    background: transparent;
+    border-top: 0px;
+}
+
+.card {
+    min-height : 100%;
+    
+}
+
+
+
+/*  create-task.html  */
+
+.formT {
+    position: relative;
+    background-color: #5bb1ab;
+    max-width: 800px;
+    padding: 5px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.containerC {
+    width: 650px;
+    padding:  0 0;
+    margin: auto;
+}
+
+#btn {
+    width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d28542;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: white;
+    font: bold;
+    font-size: 15px;
+}
+
+#btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.inputT {
+    font-size: 18px;
+    color: white;
+}

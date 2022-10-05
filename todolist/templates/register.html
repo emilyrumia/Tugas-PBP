@@ -2,109 +2,33 @@
 
 {% block meta %}
 
-<style>
-    h1 {
-        text-align: center;
-        font: bold
-    }
-    
-    .container {
-        background-color: #3f624c;
-        margin-left: 480px;
-        margin-right: 480px;
-        margin-bottom: auto;
-        text-align: center;
-        border-radius: 18px;
-    }
-
-    
-    .register {
-        margin-top:130px;
-    }
-    
-    .daftar_btn {
-        width: 100px;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #d28542;
-        padding: 5px 15px;
-        border-radius: 15px;
-        color: white;
-        font: bold;
-        font-size: 15px;
-    }
-
-    .daftar_btn:hover {
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-    
-    .input {
-        font-size: 18px;
-        color: white;
-    }
-    
-    body {
-        background-color: #dde3dd;
-        font-family: Helvetica;
-    }
-    
-    h4 {
-        text-align: center;
-    }
-
-    #help {
-        font-size: 12px;
-        color: #ead6b9;
-    }
-
-    .message {
-        font: bold;
-        color: red;
-        text-align: center;
-    }
-    
-    li {
-        list-style-type: none;
-    }
-
-    </style>
-
 <title>Registrasi Akun</title>
+
 {% endblock meta %}
 
 {% block content %}  
 
-<div class = "register">
-    
-    <h1>Registration</h1>  
-
-    <div class = "container">
-        <form method="POST" >  
-            {% csrf_token %}  
-            <br></br> 
-            {% for field in form %}
-            <div class= "fieldWrapper">
-                <div class = "input">{{ field.label_tag }}</div>
-                <div class = "input">{{ field }}</div>
-                <div class = "input" id="help">{{ field.help_text }}</div>
+    <div class = "register"> 
+        <div class = "containerR">
+            <div class = "formR">
+                <form method="POST" >  
+                    {% csrf_token %}  
+                    <br></br> 
+                    {% for field in form %}
+                    <div>
+                        <div class = "inputR">{{ field.label_tag }} {{ field }}</div>
+                        <div class = "inputR" id="help">{{ field.help_text }}</div>
+                        <br>
+                    </div>
+                    <div class = "messageR">{{  field.errors }}</div>
+                    {% endfor %}
+                    <input class ="daftar_btn" type="submit" value="Register">           
+                </form>
                 <br>
+                <p class = "p"> Already have an account? <a href="{% url 'todolist:login' %}">Login here!</a></p>
             </div>
-            {% endfor %}
-            <input class ="daftar_btn" type="submit" value="Register">           
-        </form>
-        <br></br> 
-    </div>
+        </div>
 
-    {% if messages %}  
-        <ul class = "message">   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
+    </div>  
 
 {% endblock content %}

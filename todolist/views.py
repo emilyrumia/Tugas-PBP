@@ -28,8 +28,6 @@ def register(request):
             form.save()
             messages.success(request, 'Account has been created successfully!')
             return redirect('todolist:login')
-        else:
-            messages.info(request, 'Check your input!')
     context = {'form':form}
     return render(request, 'register.html', context)
 
@@ -60,23 +58,23 @@ def show_create_task(request):
             title = form.cleaned_data["title"]
             description = form.cleaned_data["description"]
             is_finished = False
-            Task.objects.create(date=date, user=user, title=title, description=description, is_finished=is_finished)
+            TaskList.objects.create(date=date, user=user, title=title, description=description, is_finished=is_finished)
             messages.success(request, 'Your new task has been added!')
             return redirect('todolist:todolist')
     else:
         form = TaskForm()
-    return render(request, 'create-task.html', {'form': form})
+    return render(request, 'create-task.html', {'form': form, 'username': request.user.get_username()} )
 
 @login_required(login_url='/todolist/login/')
 def update_status(request, id):
-    data = Task.objects.get(user = request.user, pk = id)
+    data = TaskList.objects.get(user = request.user, pk = id)
     data.is_finished = not data.is_finished
     data.save()
     return redirect('todolist:todolist')
 
 @login_required(login_url='/todolist/login/')
 def delete(request, id):
-    data = Task.objects.get(user = request.user, pk = id)
+    data = TaskList.objects.get(user = request.user, pk = id)
     data.delete()
     messages.success(request, 'Your task has been successfully deleted!')
     return redirect('todolist:todolist')

@@ -1,115 +1,49 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<style>
-h1 {
-    text-align: center;
-    font: bold
-}
 
-table {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: separate;
-    border-spacing: 15px;
-}
+    <title>Login</title>
 
-.container {
-    background-color: #3f624c;
-    margin-left: 550px;
-    margin-right: 550px;
-    margin-bottom: auto;
-    text-align: center;
-    border-radius: 18px;
-}
-
-tr, td {
-    color: white;
-}
-
-.login {
-    margin-top:180px;
-}
-
-.login_btn {
-    width: 100px;
-    margin-top: auto;
-    margin-bottom: auto;        
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #d28542;
-    padding: 5px 15px;
-    border-radius: 15px;
-    color: white;
-    font: bold;
-    font-size: 15px;
-}
-
-.input {
-    font-size: 18px;
-}
-
-body {
-    background-color: #dde3dd;
-    font-family: Helvetica;
-}
-
-h4 {
-    text-align: center;
-}
-
-.message {
-    font: bold;
-    color: red;
-    text-align: center;
-}
-
-li {
-    list-style-type: none;
-}
-
-</style>
-
-<title>Login</title>
 {% endblock meta %}
 
 {% block content %}
 
 <div class = "login">
 
-    <h1>Login</h1>
+    <div class="containerL">
+        <div class="formL">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <br>
+                <table id = "login">
+                    <tr>
+                        <td>Username: <input class="inputL" type="text" name="username" placeholder="Username" class="form-control"></td>
+                    </tr>
 
-    <div class="container">
-        <form method="POST" action="">
-            {% csrf_token %}
+                    <tr>
+                        <td>Password: <input class="inputL" type="password" name="password" placeholder="Password" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td><input class="login_btn" type="submit" value="Login"></td>
+                    </tr>
+                </table>
+            </form> 
+            {% if messages %}
+                <ul class = "messageL">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %} 
+            
             <br>
-            <table>
-                <tr>
-                    <td>Username: <input class="input" type="text" name="username" placeholder="Username" class="form-control"></td>
-                </tr>
-
-                <tr>
-                    <td>Password: <input class="input" type="password" name="password" placeholder="Password" class="form-control"></td>
-                </tr>
-
-                <tr>
-                    <td><input class="login_btn" type="submit" value="Login"></td>
-                </tr>
-            </table>
-        </form>   
-        <br>
+            <p class = "p"> Don't have an account yet? <a href="{% url 'todolist:register' %}">Create account</a></p>
+        </div>
     </div>
 
-    {% if messages %}
-        <ul class = "message">
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}  
-
-    <h4> Don't have an account yet? <a href="{% url 'todolist:register' %}">Create account</a></h4>
 
 </div>
 
