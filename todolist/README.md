@@ -8,6 +8,108 @@ Click [here](https://appkatalog.herokuapp.com/todolist/) to visit the app!
 - [Create Task](https://appkatalog.herokuapp.com/todolist/create-task) 
 - [Logout](https://appkatalog.herokuapp.com/todolist/logout/) 
 
+## Tugas 5
+
+## 💡Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+- Inline CSS   
+   - Penjelasan: Inline CSS adalah cara penulisan CSS dalam memberikan style pada sebuah elemen HTML dengan langsung menuliskannya sebagai attribute dari tag elemen HTML tersebut.
+   - Contoh: `<h1 style = "color: white"> Welcome </h1>`.
+   - Kelebihan: 
+      - Memudahkan kita jika hanya ingin menguji dan melihat perubahan pada satu elemen
+      - Memudahkan kita untuk merubah atau menambahkan atau overwrite style dengan cepat pada satu elemen 
+      - Proses request HTTP yang kecil membuat proses loading website jadi lebih cepat.  
+   - Kekurangan:
+      - Hanya bisa merubah satu elemen saja
+      - Jika style yang ditambahkan ada banyak, file html menjadi susah untuk dibaca
+- Internal CSS
+   - Penjelasan: Internal CSS adalah cara penulisan CSS dalam memberikan style sebuah elemen dengan menuliskan pada di awal satu file html tertentu diantara tag `<style>`.
+   - Contoh: 
+      ```shell
+      <style> 
+         h1 {
+            color: white;
+         } 
+      </style>
+      ````
+   - Kelebihan: 
+      - Dapat merubah secara internal karena hanya berlaku pada satu file html tersebut
+      - File menjadi tidak teralu banyak karena HTML dan CSS menjadi satu
+      - CSS selector, seperti tag selector, class selector, dan id selector bisa digunakan sehingga bisa merubah tidak hanya satu elemn saja 
+   - Kekurangan:
+      - Tidak efesien jika terdapat style CSS yang sama pada elemen di file lain
+      - Tidak efektif karena membuat ukuran file HTML menjadi besar dan performa web jadi lambat karena CSS yang berbeda-beda dapat mengakibatkan loading ulang setiap berganti halaman website
+- External CSS
+   - Penjelasan: External CSS adalah cara penulisan CSS dalam memberikan style sebuah elemen dengan menuliskan terpisah dari kode HTML dan akan dihubungkan ke file HTML dengan menggunakan tag `<link>`
+   - Contoh: Menggunakan CSS framework, yaotu Bootstrap dan menambahkan kode berikut pada file HTML.
+      ```shell
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      ````
+   - Kelebihan:
+      - Efektif untuk menambahkan style dengan CSS yang sama pada elemen di berberapa file karena satu file CSS bisa digunakan sekaligus di berbagai file HTML
+      - Ukuran halaman web menjadi lebih kecil dan struktur HTML menjadi lebih rapi. 
+   - Kekurangan:
+      - Jika terjadi masalah saat file CSS dihubungkan ke file HTML, tampilan web akan terlihat berantakan. Hal ini bisa disebabkan karena gangguan koneksi internet.
+
+## 💡Jelaskan tag HTML5 yang kamu ketahui.
+- `<html>` -> Tag untuk membuat dokumen HTML
+- `<body>` -> 	Tag untuk membuat tubuh untuk megisi konten yang ingin ditampilkan dalam sebuah halaman HTML
+- `<h1>` sampai `<h6>` -> 	Tag untuk membuat heading. Angka mempunyai perbedaan pada ukuran
+- `<p>` -> 	Tag untuk membuat paragraf
+- `<br>` -> Tag untuk memasukan "new line"
+- `<div>` -> Tag untuk mengelompokkan elemen atau bermacam-macam tag agar menjadi suatu grup atau biasa dikenal sebagai "container"
+- `<form>` -> Tag untuk mendefinisikan awal dan akhir form pada HTML
+- `<input>` -> Tag untuk menunjukkan sebuah inputan (masukkan) berdasarkan tipe, seperti text, password, dll
+- `<title>` -> Tag untuk membuat judul halaman web
+- `<link>` -> Tag untuk menghubungkan dokumen html atau merujuk kepada suatu external file
+- `<a>`-> Tag untuk memasukan link aktif pada elemen HTML
+- `<table>` -> Tag untuk mendefinisikan awal dan akhir table pada HTML
+- `<th>` -> Tag untuk membuat judul / header pada table atau kepanjangan dari "table head".
+- `<tr>`-> Tag untuk membuat baris atau kepanjangan dari "tabel row"
+- `<td>`-> Tag untuk membuat isi dari baris biasa disebut dengan sel atau kepanjangan dari "table data"
+- `<nav>` -> Tag untuk merepresentasikan link navigasi
+- `<ul>` -> Tag untuk mengurutkan suatu list dengan suatu simbol atau kepanjangan dari "un-ordered list"
+- `<li>` -> Tag untuk untuk menampilkan item pada unordered dan ordered list
+
+## 💡Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+- `tag selector` -> CSS selector untuk menerapkan style pada elemen berdasarkan tag dengan penulisan `tag {...}`. Contoh: h1 {..}
+- `class selector` -> CSS selector untuk menerapkan style pada elemen berdasarkan class dengan penulisan `.class {...}`. Contoh: .card {...}
+- `id selector` -> CSS selector untuk merapkan style pada elemen berdasarkan id dengan penulisan `#id {...}`. Contoh: #btn {...}
+
+## 💡Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Membuka folder yang berisi aplikasi `todolist` yang merupakan tugas 4 dan menjalankan virtual environment terlebih dahulu.
+   ```shell
+   python -m venv env
+   source env/bin/activate
+   pip install -r requirements.txt
+   ```
+2. Memastikan ada kode berikut pada `setting.py` di folder `project_django`
+   ```shell
+   # Static files (CSS, JavaScript, Images)
+   # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+   STATIC_URL = '/static/'
+
+   STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+   STATICFILES_DIRS = [
+       BASE_DIR / 'static',
+   ]
+   ```
+ 3. Menjalankan perintah `python manage.py collectstatic` pada terminal untuk mengumpulkan static files dari semua app sehingga mempermudah akses untuk semua app. Setelah itu, akan terbentuk folder `static`. Pada folder `static` membuat folder baru didalamnya bernama `css`. Dalam folder tersebut, membuat file CSS yang akan dijadikan file untuk memberi style pada elemen-elemen aplikasi `todolist`.
+ 4. Pada folder `templates`, akses `base.html` dan memastikan ada kode awal kode `{% load static %}`.
+5. Setelah itu untuk menghubungkan halaman HTML dengan file CSS yang sudah dibuat dan juga CSS framework, yaitu Bootstrap, pada `base.html` juga ditambahkan kode berikut
+   ```shell
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   ```
+7. Menjalankan perintah `python manage.py runserver` dan mengakses `http://localhost:8000/todolist/`.
+8. Menambahkan tag pada file html di folder `templates` aplikasi `todolist` dan menambahkan style dengan mengakses menggunakan CSS selector yang sesuai. Selama melakukan penambahan atau pergantian, terus memantau `http://localhost:8000/todolist/`.
+9. Untuk membuat card, saya menggunakan CSS framework Bootstrap yang diakses pada link [ini](https://getbootstrap.com/docs/4.0/components/card/)
+10. Untuk membuatnya responsive, saya menambahkan navbar atau navigation bar pada atas halaman web saya dengan CSS framework Bootstrap yang diakses pada link [ini](https://getbootstrap.com/docs/4.0/components/navbar/)
+11. Setelah mendapatkan tampilan halaman web yang menarik, saya mendeploy ulang ke heroku terhadap aplikasi `todolist` dengan melakukan `git add`, `git commit` dan `git push` ke dalam repositori github dan dikarenakan sudah pernah di deploy pada tugas 4 dan ada file `dpl.yml` serta mengisi Secrets untuk GitHub Actions `(Settings -> Secrets -> Actions)` pada variabel repository secret untuk melakukan deployment. Maka deployment akan otomatis terjadi.
+
+## Tugas 4
+
 ## 💡Apa kegunaan `{% csrf_token %}` pada elemen `<form>`? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?
 
 `{% csrf_token %}` adalah token yang digunakan untuk menjaga keamanan, khusunya melindungi dari CSRF (Cross Site Request Forgery) Attack. Tanpa adanya token ini, form akan tetap berjalan dengan baik, namun akan memudahkan pihak eksternal website tersebut mengakses data karena request akan diterima tanpa adanya verifikasi atau validasi. 
