@@ -39,10 +39,8 @@
     <div class="d-flex flex-wrap justify-content-center">
         {% for list in data_todolist %}
         <div class="card shadow p-3 mb-5 bg-body rounded mx-3 my-4 mouse">
-            <div class="card" style="max-width: 13rem;">
+            <div class="card" style="width: 19rem; height: 100%;">
                 <div class="card-body">
-                    <h5 class="card-title">{{list.title}}</h5>
-                    <p class="card-text tex-truncate">{{list.description}}</p>
                     <div >
                         {% if list.is_finished %}
                             <button id ="btn-ans"><a href="{% url 'todolist:update_status' list.id %}">Finished</a></button>
@@ -50,8 +48,11 @@
                             <button id ="btn-ans"><a href="{% url 'todolist:update_status' list.id %}">Haven't Finish</a></button>
                         {% endif %}
                             <button id ="btn-ans"><a href="{% url 'todolist:delete' list.id %}">Delete</a></button>
-                            <small class="card-subtitle mb-2 text-muted">{{list.date}}</small>
-                    </div> 
+                    </div>
+                    <br>
+                    <small class="card-subtitle mb-2 text-muted">{{list.date}}</small>
+                    <h5 class="card-title">{{list.title}}</h5>
+                    <p class="card-text tex-truncate">{{list.description}}</p>
                 </div>
             </div>
         </div>
