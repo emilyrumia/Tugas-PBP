@@ -54,8 +54,8 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
      ```
 **AJAX POST**
 - Buatlah sebuah tombol Add Task yang membuka sebuah modal dengan form untuk menambahkan task.
-  Membuka `todolist.html` pada foler `templates` dan menambahkan button untuk add task
-  Membuat form yang bisa diakses dengan mengklik button tadi (dengan fungsi AJAX)
+  Membuka `todolist.html` pada foler `templates` dan menambahkan button add task untuk mentrigger munculnya modal
+  Membuat modal menggunakan bootstrap dan didalam terdapat form untuk menambahkan task
 - Buatlah view baru untuk menambahkan task baru ke dalam database.
    Membuka `views.py` pada folder aplikasi `todolist` dan membuat fungsi `show_add_task`. Isi fungsi sebagai berikut:
      ``` shell
@@ -92,7 +92,12 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
      ...
      ```
 - Tutup modal setelah penambahan task telah berhasil dilakukan.
-  Membuat fungsi untuk otomatis menutup form setelah submit
+  Menambahkan kode berikut setelah berhasil submit form
+     ``` shell
+     ...
+     $("#addModal").modal('hide')
+     ...
+     ```
   > function hideForm dalam file Tugas 6 saya
 - Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page
   Selalu menambahkan fungsi `refresh` setiap kali melakukan perubahan
