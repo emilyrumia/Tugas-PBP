@@ -19,14 +19,14 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
 ## 💡Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
 **AJAX GET**
-- Buatlah view baru yang mengembalikan seluruh data task dalam bentuk JSON.
+- Buatlah view baru yang mengembalikan seluruh data task dalam bentuk JSON. <br>
   Membuka `views.py` pada folder aplikasi `todolist` dan membuat fungsi `show_json` untuk memproses data yang ada pada file `json`. Isi fungsi sebagai berikut:
      ``` shell
      def show_json(request):
       data_todolist = TaskList.objects.filter(user=request.user)   
       return HttpResponse(serializers.serialize('json', data_todolist), content_type="application/json")
      ```
-- Buatlah path /todolist/json yang mengarah ke view yang baru kamu buat.
+- Buatlah path /todolist/json yang mengarah ke view yang baru kamu buat. <br>
   Membuka `urls.py` pada foler aplikasi `todolist` dan mengimport fungsi baru diatas pada `views.py`. Isi sebagai berikut:
      ``` shell
      from todolist.views import show_json
@@ -39,7 +39,7 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
       ...
      ]
      ```
-- Lakukan pengambilan task menggunakan AJAX GET.
+- Lakukan pengambilan task menggunakan AJAX GET. <br>
   Membuka `todolist.html` pada foler `templates` dan Menambahkan kode berikut untuk menggunakan AJAX
      ``` shell
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -53,10 +53,10 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
      });
      ```
 **AJAX POST**
-- Buatlah sebuah tombol Add Task yang membuka sebuah modal dengan form untuk menambahkan task.
-  Membuka `todolist.html` pada foler `templates` dan menambahkan button add task untuk mentrigger munculnya modal
+- Buatlah sebuah tombol Add Task yang membuka sebuah modal dengan form untuk menambahkan task. <br>
+  Membuka `todolist.html` pada foler `templates` dan menambahkan button add task untuk mentrigger munculnya modal <br>
   Membuat modal menggunakan bootstrap dan didalam terdapat form untuk menambahkan task
-- Buatlah view baru untuk menambahkan task baru ke dalam database.
+- Buatlah view baru untuk menambahkan task baru ke dalam database. <br>
    Membuka `views.py` pada folder aplikasi `todolist` dan membuat fungsi `show_add_task`. Isi fungsi sebagai berikut:
      ``` shell
      def show_add_task(request):
@@ -70,7 +70,7 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
           return JsonResponse({"Message": 'Your new task has been added!'},status=200)
       return redirect('todolist:todolist')
      ```
-- Buatlah path /todolist/add yang mengarah ke view yang baru kamu buat.
+- Buatlah path /todolist/add yang mengarah ke view yang baru kamu buat.<br>
   Membuka `urls.py` pada foler aplikasi `todolist` dan mengimport fungsi baru diatas pada `views.py`. Isi sebagai berikut:
      ``` shell
      from todolist.views import show_add_task
@@ -83,7 +83,7 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
       ...
      ]
      ```
-- Hubungkan form yang telah kamu buat di dalam modal kamu ke path /todolist/add
+- Hubungkan form yang telah kamu buat di dalam modal kamu ke path /todolist/add <br>
   Membuka `todolist.html` pada foler `templates` dan menambahkan fungsi AJAX untuk melakukan penambahan task melalui form dan didalam nya ada kode berikut untuk menghubungkan dengan path
   > function addTask pada file Tugas 6 saya
      ``` shell
@@ -91,7 +91,7 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
      url: "{% url 'todolist:add-task' %}",
      ...
      ```
-- Tutup modal setelah penambahan task telah berhasil dilakukan.
+- Tutup modal setelah penambahan task telah berhasil dilakukan. <br>
   Menambahkan kode berikut setelah berhasil submit form
      ``` shell
      ...
@@ -99,5 +99,5 @@ AJAX akan dijalankan saat terjadi sebuah kejadian atau event. Saat proses menjal
      ...
      ```
   > function hideForm dalam file Tugas 6 saya
-- Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page
+- Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page <br>
   Selalu menambahkan fungsi `refresh` setiap kali melakukan perubahan
