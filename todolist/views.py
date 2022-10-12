@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.http.response import JsonResponse
+from django.core import serializers
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -18,6 +21,23 @@ def show_todolist(request):
     'username': request.user.get_username(),
     }
     return render(request, "todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data_todolist = TaskList.objects.filter(user=request.user)   
+    return HttpResponse(serializers.serialize('json', data_todolist), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+def show_add_task(request):
+    if request.method == 'POST':
+        user = request.user
+        date = datetime.datetime.now()
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        is_finished = False
+        TaskList.objects.create(date=date, user=user, title=title, description=description, is_finished=is_finished)
+        return JsonResponse({"Message": 'Your new task has been added!'},status=200)
+    return redirect('todolist:todolist')
 
 def register(request):
     form = UserCreationForm()
@@ -78,3 +98,9 @@ def delete(request, id):
     data.delete()
     messages.success(request, 'Your task has been successfully deleted!')
     return redirect('todolist:todolist')
+
+@login_required(login_url='/todolist/login/')
+def delete_task(request, id):
+    data = TaskList.objects.get(user = request.user, pk = id)
+    data.delete()
+    return JsonResponse({"Message": 'Your task has been successfully deleted!'},status=200)
